@@ -2,23 +2,22 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(props) {
+  console.warn("props",props.todos)
+  const handler=()=>
+  {
+    // console.warn("app",props)
+    props.toggleTodo("hello")
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div className="header">
+       <h1>E-Comm</h1>
+     </div>
+     <div className="content" >
+       <h2>Body</h2>
+       <button onClick={handler}> Click me</button>
+     </div>
     </div>
   );
 }
